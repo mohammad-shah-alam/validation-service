@@ -19,6 +19,8 @@ This service is leveraged for validation of password.
 
 * On service documentation swagger ui support.
 * Actuator support.
+    * /actuator/health
+    * /actuator/env
 * No secure data logging.
 * Validation rules can be injected through spring DI.
 * Generic regex rule.
