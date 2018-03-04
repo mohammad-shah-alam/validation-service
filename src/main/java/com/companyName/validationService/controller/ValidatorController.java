@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-import static com.companyName.validationService.util.Utils.convertJsonObjectToString;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -73,7 +72,7 @@ public class ValidatorController {
         ResponseEntity responseEntity = new ResponseEntity(OK);
 
         log.info("Finished /validator/password request = {} with responseEntity JSON = {}",
-                convertJsonObjectToString(validatePasswordRequest),
+                validatePasswordRequest,
                 responseEntity);
 
         return responseEntity;

@@ -12,8 +12,6 @@ import org.springframework.validation.Validator;
 
 import java.util.List;
 
-import static com.companyName.validationService.util.Utils.convertJsonObjectToString;
-
 /**
  * Created by MOHAMMADSHAH.ALAM on 3/3/2018.
  */
@@ -37,7 +35,7 @@ public class PasswordValidator implements Validator {
     @Override
     public void validate(@Nullable Object entityToValidate, Errors errors) {
 
-        log.info("Going to validate entity {}", convertJsonObjectToString(entityToValidate));
+        log.info("Going to validate entity {}", entityToValidate);
 
         if (validationRules == null)
         {
@@ -53,6 +51,6 @@ public class PasswordValidator implements Validator {
             }
         });
 
-        log.info("Validation result of Entity: {}, errors: {}", convertJsonObjectToString(entityToValidate), errors);
+        log.info("Validation result of Entity: {}, errors: {}", entityToValidate, errors);
     }
 }
