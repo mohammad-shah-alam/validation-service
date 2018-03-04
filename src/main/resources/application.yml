@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: validation-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","env"]
+server:
+  port: 8081
+app:
+  validation:
+    password:
+      # Length must be min 5 and max 12
+      length:
+        lengthRuleRegex: ^.{5,12}$
+        errorMsg: Must be between 5 and 12 characters in length.
+    # must be alphanumeric with all letters in small case
+      charCombination:
+          charactersRuleRegex: ^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$
+          errorMsg: Must consist of a mixture of lowercase letters and numerical digits only, with at least one of each.
+      sequenceRule:
+                errorMsg: Must not contain immediately following same sequence of characters.
+
