@@ -12,6 +12,7 @@ This service is leveraged for validation of password.
         * Service will evaluate request with all rules and return message delimited by \n
         * Request will call service layer from controller if additional business logic orchestration is required.
         * Flow will come to controller only a valid request is there.
+        * Rules are injected to service using spring DI
 
 * On service documentation swagger ui support.
 * Actuator support.
