@@ -4,7 +4,7 @@ This service is leveraged for validation of password.
 # Design thought's
 
 * Resource ` POST /validate` to take validation request.
-    * Resource `POST /validate/password` for validating password over different criteria's (please refer wiki/project doc for more details)
+    * Resource `POST /validate/password` for validating password over different criteria's
         * Takes POST request because its secure data.
         * Use light weight filter for the validation triggered by @Valid annotation, which will save servlet thread.
         * Controller will return HTTP 200 if validation is passed.
