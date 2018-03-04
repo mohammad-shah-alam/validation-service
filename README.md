@@ -13,6 +13,9 @@ This service is leveraged for validation of password.
         * Request will call service layer from controller if additional business logic orchestration is required.
         * Flow will come to controller only a valid request is there.
         * Rules are injected to service using spring DI
+            * Must be between 5 and 12 characters in length.
+            * Must consist of a mixture of lowercase letters and numerical digits only, with at least one of each.
+            * Must not contain immediately following same sequence of characters.
 
 * On service documentation swagger ui support.
 * Actuator support.
@@ -73,6 +76,22 @@ Create a new Remote Configuration in IntelliJ:
 
 ## Api Docs
 Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html) in your browser.
+
+### `POST /validate/password`
+
+#### Sample request
+``{
+    "password": "mySceretValue"
+  }``
+
+#### Succecss HTTP 200
+
+#### Bad request response -HTTP 400
+``
+{
+  "message": "Must be between 5 and 12 characters in length.\nMust consist of a mixture of lowercase letters and numerical digits only, with at least one of each."
+}
+``
 
 ## External Service/Resource Dependencies 
 
