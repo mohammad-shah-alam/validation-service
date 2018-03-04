@@ -1,5 +1,26 @@
 # Validator API
-This service is leveraged for validation of password .
+This service is leveraged for validation of password.
+
+# Design thought
+
+* Resource ` POST /validate` to take validation request.
+    * Resource `POST /validate/password` for validating password over different criteria's (please refer wiki/project doc for more details)
+    * Takes request as POST because its secure data.
+    * Use light weight filter for the validation triggered by @Valid annotation, which will same servlet thread.
+    * Flow will come to controller only a valid request is there.
+* On service documentation swagger ui support.
+* Actuator support.
+* No secure data logging.
+* Validation rules can be injected through spring DI.
+* Generic regex rule.
+* Error message and regex rules inject through configuration
+
+# Future Enhancement
+
+* Configuration injection through centralized config server.
+* Request tracing (e.g Zipkin), requires zipkin server details
+* Service Discovery support, required eureka server details.
+* Cloud/Docker support if required.
 
 ## Project Requirements
 - JDK 1.8.0-31 or higher
