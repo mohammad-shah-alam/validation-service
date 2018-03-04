@@ -39,6 +39,9 @@ This service is leveraged for validation of password.
 1. clone `https://github.com/mohammad-shah-alam/validation-service.git`
 1. run `./mvnw spring-boot:run`
 
+Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html) http://localhost:8081/swagger-ui.html in your browser.
+
+
 ## Prerequisites to import project in IDE
 
 * Lombok setting are required to run this project in your IDE.
@@ -75,7 +78,7 @@ Create a new Remote Configuration in IntelliJ:
 1. Select the remote configuration
 
 ## Api Docs
-Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html) in your browser.
+Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html) http://localhost:8081/swagger-ui.html in your browser.
 
 ### `POST /validate/password`
 
