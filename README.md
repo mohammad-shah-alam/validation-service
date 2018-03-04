@@ -1,13 +1,18 @@
 # Validator API
 This service is leveraged for validation of password.
 
-# Design thought
+# Design thought's
 
 * Resource ` POST /validate` to take validation request.
     * Resource `POST /validate/password` for validating password over different criteria's (please refer wiki/project doc for more details)
-    * Takes request as POST because its secure data.
-    * Use light weight filter for the validation triggered by @Valid annotation, which will same servlet thread.
-    * Flow will come to controller only a valid request is there.
+        * Takes POST request because its secure data.
+        * Use light weight filter for the validation triggered by @Valid annotation, which will save servlet thread.
+        * Controller will return HTTP 200 if validation is passed.
+        * In case of validation failure service will return HTTP 400 along with message body.
+        * Service will evaluate request with all rules and return message delimited by \n
+        * Request will call service layer from controller if additional business logic orchestration is required.
+        * Flow will come to controller only a valid request is there.
+
 * On service documentation swagger ui support.
 * Actuator support.
 * No secure data logging.
