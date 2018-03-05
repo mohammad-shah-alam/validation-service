@@ -5,10 +5,11 @@ This service is leveraged for validation of password.
 
 * Resource ` POST /validate` to take validation request.
     * Resource `POST /validate/password` for validating password over different criteria's
-        * Takes POST request because its secure data.
+        * Take POST json request because its secure data.
         * Use light weight filter for the validation triggered by @Valid annotation, which will save servlet thread.
-        * Controller will return HTTP 200 if validation is passed.
+        * Rest Controller will return HTTP 200 if validation is passed.
         * In case of validation failure service will return HTTP 400 along with message body.
+        * Any other error will be returned as HTTP 500 along with message body.
         * Service will evaluate request with all rules and return message delimited by \n
         * Request will call service layer from controller if additional business logic orchestration is required.
         * Flow will come to controller only a valid request is there.
@@ -17,7 +18,7 @@ This service is leveraged for validation of password.
             * Must consist of a mixture of lowercase letters and numerical digits only, with at least one of each.
             * Must not contain immediately following same sequence of characters.
 
-* On service documentation swagger ui support.
+* On service documentation swagger ui support.(http://localhost:8081/swagger-ui.html#!/Validation_Service/validatePasswordUsingPOST)
 * Actuator support.
     * /actuator/health
     * /actuator/env
@@ -42,7 +43,8 @@ This service is leveraged for validation of password.
 1. clone `https://github.com/mohammad-shah-alam/validation-service.git`
 1. run `./mvnw spring-boot:run`
 
-Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html) http://localhost:8081/swagger-ui.html in your browser.
+Once the application is up and running you can see the [Swagger API Docs](http://localhost:8081/swagger-ui.html#!/Validation_Service/validatePasswordUsingPOST) 
+http://localhost:8081/swagger-ui.html#!/Validation_Service/validatePasswordUsingPOST in your browser.
 
 
 ## Prerequisites to import project in IDE

@@ -14,7 +14,6 @@ import static org.junit.Assert.fail;
 /**
  * Created by mohammadshah.alam on 3/3/2018.
  */
-@RunWith(MockitoJUnitRunner.class)
 public class RegexRuleImplTest {
     private String errorMsgLength = "Length must be between 5 and 12 characters";
     private PasswordValidationRule rule;

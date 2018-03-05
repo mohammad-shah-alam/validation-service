@@ -12,7 +12,6 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by MOHAMMADSHAH.ALAM on 3/3/2018.
  */
-@RunWith(MockitoJUnitRunner.class)
 public class SequenceRuleImplTest {
 
     private String errorMsg = "Must not contain immediately following same sequence of characters.";

@@ -43,6 +43,9 @@ public class PasswordValidatorTest {
         validatePasswordRequest = null;
 
         passwordValidator = new PasswordValidator(validationRules);
+
+        when(sequenceRule.validate(anyString())).thenReturn(true);
+        when(regexRule.validate(anyString())).thenReturn(true);
     }
 
     @Test
@@ -105,7 +108,6 @@ public class PasswordValidatorTest {
 
         when(regexRule.validate(anyString())).thenThrow(
                 new IllegalArgumentException("Max/Min regex validation failed"));
-        when(sequenceRule.validate(anyString())).thenReturn(true);
 
         validatePasswordRequest = ValidatePasswordRequest.builder()
                 .password("123wertykjhkjhkjhkjhkjhkjhkjhk")
@@ -128,7 +130,6 @@ public class PasswordValidatorTest {
     @Test
     public void validate_invalid_input_and_sequence_validator_failed_then_error() {
 
-        when(regexRule.validate(anyString())).thenReturn(true);
         when(sequenceRule.validate(anyString())).thenThrow(new IllegalArgumentException("Sequence validation failed"));
 
         validatePasswordRequest = ValidatePasswordRequest.builder()
