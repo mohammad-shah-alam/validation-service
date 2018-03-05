@@ -21,7 +21,7 @@ This service is leveraged for validation of password.
 * Actuator support.
     * /actuator/health
     * /actuator/env
-* No secure data logging.
+* Encrypted secure data logging.
 * Validation rules can be injected through spring DI.
 * Generic regex rule.
 * Error message and regex rules inject through configuration
@@ -32,6 +32,7 @@ This service is leveraged for validation of password.
 * Request tracing (e.g Zipkin), requires zipkin server details
 * Service Discovery support, required eureka server details.
 * Cloud/Docker support if required.
+* Security
 
 ## Project Requirements
 - JDK 1.8.0-31 or higher

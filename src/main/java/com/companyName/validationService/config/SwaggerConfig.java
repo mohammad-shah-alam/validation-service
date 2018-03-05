@@ -16,7 +16,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 public class SwaggerConfig {
 
     @Bean
-    public Docket estPricingTierApi() {
+    public Docket validationServiceApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("validation-service")
                 .apiInfo(apiInfo())
